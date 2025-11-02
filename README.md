@@ -1,12 +1,15 @@
-# Nu primesc notă pentru că nu am pus titlu și descriere
+# Flappy Wing
 
-### Folosiți template-ul corespunzător grupei voastre!
+### Description
+FlappyWing is a 2D arcade side-scroller game designed to test the player's reflexes and patience. The player takes control of a bird that moves automatically from left to right through a procedurally generated environment.
 
-| Laborant  | Link template                                |
-|-----------|----------------------------------------------|
-| Dragoș B  | https://github.com/Ionnier/oop-template      |
-| Tiberiu M | https://github.com/MaximTiberiu/oop-template |
-| Marius MC | https://github.com/mcmarius/oop-template     |
+The game mechanic is minimalistic yet notoriously difficult. With a single key press (a "flap"), the player must fight against gravity, which constantly pulls the bird downwards. The objective is to precisely navigate the bird through the narrow gaps between pairs of vertical pipes, which appear at regular intervals and varying heights.
+
+Each successfully passed obstacle increments the player's score. The game has no predefined end; the goal is to survive as long as possible and achieve a high score. Any collision, whether with a pipe or the ground, will result in an immediate "game over," requiring the player to start over.
+
+This project will be developed in C++ and will emphasize the application of Object-Oriented Programming (OOP) principles to model the game's entities (e.g., Bird, Obstacle) as distinct objects that interact to create the gameplay experience.
+
+Inspiration: Flappy Bird (by .Gears Studio)
 
 ### Important!
 
