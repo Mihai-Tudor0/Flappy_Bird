@@ -1,6 +1,6 @@
 #include "Game.hpp"
 
-Game::Game() : bird(), game_over(false) {
+Game::Game() : bird(), obstacles(), score(), game_over(false) {
     // Inițializăm jocul cu câteva obstacole
     generateObstacles();
 }

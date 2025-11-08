@@ -13,6 +13,7 @@ int main() {
     // Afișează starea inițială
     std::cout << game << std::endl;
 
+
     // Așteaptă input de la tastatura.txt sau utilizator
     // Citește caractere până la 'q' sau până la Game Over
     while (std::cin >> input && input != 'q' && !game.isGameOver()) {
