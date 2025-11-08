@@ -26,8 +26,8 @@ public:
 };
 
 inline std::ostream& operator<<(std::ostream& out, const Score& score) {
-    out << "Score[current=" << score.current_score 
-        << ", high=" << score.high_score << "]";
+    out << "Score[current=" << score.getCurrentScore()
+        << ", high=" << score.getHighScore() << "]";
     return out;
 }
 

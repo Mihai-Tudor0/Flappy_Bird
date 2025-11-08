@@ -13,26 +13,39 @@ int main() {
     // Afișează starea inițială
     std::cout << game << std::endl;
 
+    // Bucla principală rulează cât timp utilizatorul nu apasă 'q'
+    while (std::cin >> input && input != 'q') {
 
-    // Așteaptă input de la tastatura.txt sau utilizator
-    // Citește caractere până la 'q' sau până la Game Over
-    while (std::cin >> input && input != 'q' && !game.isGameOver()) {
+        if (game.isGameOver()) {
+            // Dacă jocul s-a terminat, așteptăm 'r' pentru restart
+            if (input == 'r') {
+                game.reset(); // Aici apelăm funcția de reset
+                std::cout << "\n--- JOC NOU ---\n";
+            } else {
+                // Dacă e game over și nu se apasă 'r', ignorăm inputul
+                // (așteptăm 'r' sau 'q')
+                continue;
+            }
+        } else {
+            // Dacă jocul este activ, procesăm inputul normal
+            game.handleInput(input);
+            game.update();
+        }
 
-        // Trimite inputul la joc (doar spatiul contează)
-        game.handleInput(input);
-
-        // Actualizează starea jocului
-        game.update();
-
-        // Afișează noua stare a jocului
+        // Afișăm starea jocului după fiecare acțiune
         std::cout << "---------------------\n";
         std::cout << game << std::endl;
 
+        // Dacă tocmai am intrat în starea de Game Over, afișăm scorul final
         if (game.isGameOver()) {
             std::cout << "\n!!!!!!!!!! GAME OVER !!!!!!!!!!\n";
+            // Aici folosim getter-ii din Score pentru afișare
+            std::cout << "Scor final: " << game.getScore().getCurrentScore() << "\n";
+            std::cout << "High Score: " << game.getScore().getHighScore() << "\n";
+            std::cout << "\nApasati 'r' pentru a reincepe sau 'q' pentru a iesi.\n";
         }
     }
 
-    std::cout << "\nJocul s-a terminat.\n";
+    std::cout << "\nJocul s-a terminat. Scor final: " << game.getScore().getCurrentScore() << "\n";
     return 0;
 }

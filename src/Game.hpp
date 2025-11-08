@@ -25,7 +25,10 @@ public:
     
     void generateObstacles();
     void checkCollisions();
-    
+
+    void reset();
+    const Score& getScore() const { return score; }
+
     friend std::ostream& operator<<(std::ostream& out, const Game& game);
 };
 

@@ -1,4 +1,5 @@
 #include "Game.hpp"
+#include <algorithm>
 
 Game::Game() : bird(), obstacles(), score(), game_over(false) {
     // Inițializăm jocul cu câteva obstacole
@@ -79,4 +80,21 @@ std::ostream& operator<<(std::ostream& out, const Game& game) {
     }
     out << "\n]";
     return out;
+}
+
+void Game::reset() {
+    // Re-creăm pasărea la poziția inițială
+    bird = Bird();
+
+    // Golim vectorul de obstacole
+    obstacles.clear();
+
+    // Generăm obstacolele de început
+    generateObstacles();
+
+    // Resetăm scorul curent
+    score.resetScore();
+
+    // Ieșim din starea de game_over
+    game_over = false;
 }
